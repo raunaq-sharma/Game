@@ -9,28 +9,32 @@ def calc(setting):
             
 def RPG(set_mood):
     if set_mood == "Happy":
-        print ("100% stability achieved!")
+        data = "100% stability achieved!"
     else:
-        print(f"Your mental stability is: {round(calc(setting), 2)}%.")
+        data = f"Your mental stability is: {round(calc(setting), 2)}%."
+    return data
     
 def FPS(set_mood):
     if set_mood == "Angry":
-       print("100% stability achieved!")
+       data = "100% stability achieved!"
     else:
-        print(f"Your mental stability is: {round(calc(setting), 2)}%.")
+        data = f"Your mental stability is: {round(calc(setting), 2)}%."
+    return data
         
 def PnC(set_mood):
     if set_mood == "Stressed":
-        print ("100% stability achieved!")
+        data = "100% stability achieved!"
     else:
-        print(f"Your mental stability is: {round(calc(setting), 2)}%.")
-        
+        data = f"Your mental stability is: {round(calc(setting), 2)}%."
+    return data   
+    
 def Sim(set_mood):
     if set_mood == "Sad":
-        print ("100% stability achieved!")
+        data = "100% stability achieved!"
     else:
-        print(f"Your mental stability is: {round(calc(setting), 2)}%.") 
-            
+        data = f"Your mental stability is: {round(calc(setting), 2)}%."
+    return data 
+    
 def output(set_mood, set_games):
     
     global setting  #reassign values to setting in global scope
@@ -44,13 +48,14 @@ def output(set_mood, set_games):
         setting = Mood.Sad()
         
     if set_games == "RPG":
-        RPG()
+        games_result = RPG(set_mood)
     elif set_games == "FPS":
-        FPS(set_mood)
+        games_result = FPS(set_mood)
     elif set_games == "PnC":
-        PnC()
+        games_result = PnC(set_mood)
     elif set_games == "Sim":
-        Sim()
-        
-            
-#output("Angry", "FPS")
+        games_result = Sim(set_mood)
+    
+    return games_result   
+
+#print(output("Angry", "RPG"))

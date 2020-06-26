@@ -16,7 +16,8 @@ def inputs():
         mood = request.form['input1']
         games = request.form['input2']
         from Games import output
-        results = output(mood, games) ##print or return
+        games_result = output(mood, games) ##print or return
+        return games_result
         return render_template('output.html', methods = ['POST'])
     return render_template('User_inputs.html', results=results)
  
