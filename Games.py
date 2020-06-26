@@ -2,7 +2,8 @@ import Mood
 from sys import exit
 from random import randint
 
-setting = Mood.Mood(1, 1, 1)
+setting = Mood.Mood(1, 1, 1) #initialized for calc
+
 def calc(setting):
         return setting.stability * (setting.HMULT/setting.SMULT) * 100/randint(5, 10)
             
@@ -31,7 +32,8 @@ def Sim(set_mood):
         print(f"Your mental stability is: {round(calc(setting), 2)}%.") 
             
 def output(set_mood, set_games):
-
+    
+    global setting  #reassign values to setting in global scope
     if set_mood == "Happy": 
         setting = Mood.Happy()
     elif set_mood == "Angry":
@@ -50,7 +52,5 @@ def output(set_mood, set_games):
     elif set_games == "Sim":
         Sim()
         
-    # print(setting.HMULT)
-    # print(setting.SMULT)
             
-# output("Angry", "FPS")
+#output("Angry", "FPS")
