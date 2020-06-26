@@ -15,10 +15,8 @@ def inputs():
     if request.method == 'POST':
         mood = request.form['input1']
         games = request.form['input2']
-        from Games import main
-        set_mood = mood
-        set_games = games
-        Games.main()
+        from Games import output
+        results = output(mood, games) ##print or return
         return render_template('output.html', methods = ['POST'])
     return render_template('User_inputs.html', results=results)
  
